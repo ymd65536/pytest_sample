@@ -1,5 +1,6 @@
 import os
 import pytest
+from typing import Tuple, List
 
 @pytest.fixture
 def txt() -> str:
@@ -22,3 +23,15 @@ def load_numbers_sorted(file_path: str) -> list[int]:
 
 def test_load_numbers_sorted(txt):
     assert load_numbers_sorted(txt) == [1, 2, 3, 4, 5]
+
+# arg fixture
+@pytest.fixture
+def hello() -> str:
+    return "hello"
+
+@pytest.fixture
+def world(hello) -> List:
+    return [hello, "world"]
+
+def test_hello_world(world):
+    assert world == ["hello", "world"]

@@ -11,3 +11,4 @@ include
 
 # macOS
 .DS_Store
+.pytest_cache

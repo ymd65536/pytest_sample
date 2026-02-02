@@ -22,6 +22,8 @@ case_settings = {
     )
 }
 
+## 変数に合わせてパラメータ化する方法
+
 @pytest.mark.parametrize(
     "input_data, expected",
     list(case_settings.values()),
